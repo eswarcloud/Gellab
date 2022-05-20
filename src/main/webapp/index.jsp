@@ -32,7 +32,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Vinay's DevOps AWS Lab</a>
+            <a class="navbar-brand" href="#">GEL DevOps AWS Lab</a>
         </div>
         <div class="navbar-collapse collapse">
             <form class="navbar-form navbar-right" role="form">
@@ -52,7 +52,7 @@
 <div class="jumbotron">
     <div class="container">
         <h1>Hello</h1>
-        <p>This is Vinays DevOps AWS Lab</p>
+        <p>This is GEL DevOps AWS Lab</p>
         <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
         <p><a class="btn btn-primary btn-lg" role="button">Success!! more &raquo;</a></p>
     </div>
