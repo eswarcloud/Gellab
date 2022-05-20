@@ -24,7 +24,7 @@ pipeline{
      // Stage3 : Publish the artifacts to NEXUS
         stage ('Publish to Nexus'){
             steps{
-                nexusArtifactUploader artifacts: [[artifactId: 'GELDevOpsLab', classifier: '', file: 'target/GELDevOpsLab-0.0.5-SNAPSHOT.war', type: 'war']], credentialsId: 'b8ee072a-4d5b-4cc3-be40-989a25df52df', groupId: 'gelelectronics', nexusUrl: '172.20.10.217:8081', nexusVersion: 'nexus3', protocol: 'https', repository: 'GEL-Devopslab-SNAPSHOT', version: '0.0.5-SNAPSHOT'
+                nexusArtifactUploader artifacts: [[artifactId: 'GELDevOpsLab', classifier: '', file: 'target/GELDevOpsLab-0.0.5-SNAPSHOT.war', type: 'war']], credentialsId: 'b8ee072a-4d5b-4cc3-be40-989a25df52df', groupId: 'gelelectronics', nexusUrl: '3.110.189.36:8081', nexusVersion: 'nexus3', protocol: 'http', repository: 'GEL-Devopslab-SNAPSHOT', version: '0.0.5-SNAPSHOT'
             }
         }
 
