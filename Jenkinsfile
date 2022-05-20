@@ -31,18 +31,22 @@ pipeline{
      // Stage3 : Publish the artifacts to NEXUS
         stage ('Publish to Nexus'){
             steps {
+                    script {
+
+                def NexusRepo = Version.endsWith("SNAPSHOT") ? "VinaysDevOpsLab-SNAPSHOT" : "VinaysDevOpsLab-RELEASE"
                 nexusArtifactUploader artifacts: 
                 [[artifactId: "${ArtifactId}", 
                 classifier: '', 
-                file: "target/GELDevOpsLab-0.0.7-SNAPSHOT.war", 
+                file: "target/GELDevOpsLab-0.0.8-SNAPSHOT.war", 
                 type: 'war']], 
                 credentialsId: '7f6e0c41-f168-412d-8333-54d6827e1e5c', 
                 groupId: "${GroupId}", 
                 nexusUrl: '172.20.10.217:8081', 
                 nexusVersion: 'nexus3', 
                 protocol: 'http', 
-                repository: 'GEL-Devopslab-SNAPSHOT', 
+                repository: "${NexusRepo}", 
                 version: "${Version}"
+            }
             }
         }
       // Stage4 : Printing some information
