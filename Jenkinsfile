@@ -37,7 +37,7 @@ pipeline{
                 nexusArtifactUploader artifacts: 
                 [[artifactId: "${ArtifactId}", 
                 classifier: '', 
-                file: "target/GELDevOpsLab-0.0.8-SNAPSHOT.war", 
+                file: "target/${ArtifactId}-${Version}.war", 
                 type: 'war']], 
                 credentialsId: '7f6e0c41-f168-412d-8333-54d6827e1e5c', 
                 groupId: "${GroupId}", 
