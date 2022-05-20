@@ -8,7 +8,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Vinay's DevOps Lab</title>
+    <title>Gel DevOps Lab</title>
 
 
     <!-- Custom styles for this template -->
@@ -91,7 +91,7 @@
     <hr>
 
     <footer>
-        <p>&copy; vinay's devops lab 2020-2021</p>
+        <p>&copy; GEL devops lab 2020-2021</p>
     </footer>
 </div> <!-- /container -->
 
