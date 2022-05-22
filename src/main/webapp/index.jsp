@@ -51,10 +51,10 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
 <div class="jumbotron">
     <div class="container">
-        <h1>Hello</h1>
+        <h3>Goa Electronics Limited..</h3>
         <p>This is GEL DevOps AWS Lab</p>
-        <p><a class="btn btn-primary btn-lg" role="button">Learn more &raquo;</a></p>
-        <p><a class="btn btn-primary btn-lg" role="button">Register more &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" role="button">GEL Info &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" role="button">See more &raquo;</a></p>
     </div>
 </div>
 
