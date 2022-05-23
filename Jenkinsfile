@@ -11,9 +11,9 @@ pipeline{
         GroupId = readMavenPom().getGroupId() 
     }
      stages {
-        // Specify various stage with in stages
+     // Specify various stage with in stages
 
-        // stage 1. Build
+     // stage 1. Build
         stage ('Build'){
             steps {
                 sh 'mvn clean install package'
@@ -21,14 +21,24 @@ pipeline{
         }
      
 
-        // Stage2 : Testing
+    // Stage2 : Testing
         stage ('Test'){
             steps {
                 echo ' testing......'
 
             }
         }
-     // Stage3 : Publish the artifacts to NEXUS
+     // Stage3 : Publish the source code to Sonarqube
+        stage ('Sonarqube Analysis'){
+            steps {
+                echo ' Source code published to Sonarqube for SCA......'
+                withSonarQubeEnv('sonarqube'){ // You can override the credential to be used
+                     sh 'mvn sonar:sonar'
+                }
+
+            }
+        }
+     // Stage4 : Publish the artifacts to NEXUS
         stage ('Publish to Nexus'){
             steps {
                     script {
@@ -49,7 +59,7 @@ pipeline{
             }
             }
         }
-      // Stage4 : Printing some information
+      // Stage5 : Printing some information
       stage ('print some information'){
            steps{
                echo "Artifact ID is '${ArtifactId}'"
@@ -58,10 +68,10 @@ pipeline{
                echo "Name is '${Name}'"
            }
       } 
-      // Stage5 : Deploying to tomcat
+      // Stage6 : Deploying to tomcat
       stage ('Deploy to Tomcat'){
            steps {
-               echo "Deploying ...."
+               echo "Deploying to tomcat...."
                 sshPublisher(publishers: 
                 [sshPublisherDesc(
                     configName: 'Ansible_Controller', 
@@ -80,10 +90,10 @@ pipeline{
             }
      }
 
-           // Stage6 : Deploying to Docker
+    // Stage7 : Deploying to Docker
       stage ('Deploy to Docker'){
            steps {
-               echo "Deploying ...."
+               echo "Deploying to Docker...."
                 sshPublisher(publishers: 
                 [sshPublisherDesc(
                     configName: 'Ansible_Controller', 

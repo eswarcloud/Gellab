@@ -53,7 +53,7 @@
     <div class="container">
         <marquee><h2 style="background-color:powderblue;">Goa Electronics Limited..</h2></marquee>
         <p>This is GEL DevOps AWS Lab</p>
-        <p><a class="btn btn-primary btn-lg" role="button">GEL Info &raquo;</a></p>
+        <p><a class="btn btn-primary btn-lg" role="button">GEL Infrastructure &raquo;</a></p>
         <p><a class="btn btn-primary btn-lg" role="button">See more &raquo;</a></p>
     </div>
 </div>
