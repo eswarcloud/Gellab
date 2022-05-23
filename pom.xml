@@ -22,9 +22,9 @@
         <groupId>org.sonarsource.scanner.maven</groupId>
         <artifactId>sonar-maven-plugin</artifactId>
         <version>3.7.0.1746</version>
-        <finalName>${project.artifactId}-${project.version}</finalName>
       </plugin>
     </plugins>
   </pluginManagement>
+  <finalName>${project.artifactId}-${project.version}</finalName>
  </build> 
 </project>
