@@ -58,7 +58,7 @@ pipeline{
                echo "Name is '${Name}'"
            }
       } 
-      // Stage5 : Deploying
+      // Stage5 : Deploying to tomcat
       stage ('Deploy to Tomcat'){
            steps {
                echo "Deploying ...."
@@ -79,5 +79,28 @@ pipeline{
             
             }
      }
+
+           // Stage6 : Deploying to Docker
+      stage ('Deploy to Docker'){
+           steps {
+               echo "Deploying ...."
+                sshPublisher(publishers: 
+                [sshPublisherDesc(
+                    configName: 'Ansible_Controller', 
+                    transfers: [
+                        sshTransfer(
+                                cleanRemote:false,
+                                execCommand: 'ansible-playbook /opt/playbooks/downloadanddeploy_docker.yaml -i /opt/playbooks/hosts',
+                                execTimeout: 120000
+                        )
+                    ], 
+                    usePromotionTimestamp: false, 
+                    useWorkspaceInPromotion: false, 
+                    verbose: false)
+                    ])
+            
+            }
+     }
+
      }
 }
